@@ -20,8 +20,9 @@ contract SimpleStorage {
         nameToId[_name] = _id;
     }    
     
-    function store(uint256 _favorateNumber) public {
+    function store(uint256 _favorateNumber) public returns(uint256) {
         favoriteNumber = _favorateNumber;
+        return favoriteNumber;
     }
     
     // view, pure
