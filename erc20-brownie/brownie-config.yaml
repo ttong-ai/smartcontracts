@@ -1,0 +1,25 @@
+dotenv: .env
+dependencies:
+  # - <organization/repo>@<version>
+  - smartcontractkit/chainlink-brownie-contracts@1.2.0
+  - OpenZeppelin/openzeppelin-contracts@4.3.2
+compiler:
+  solc:
+    remappings:
+      - '@chainlink=smartcontractkit/chainlink-brownie-contracts@1.2.0'
+      - '@openzeppelin=OpenZeppelin/openzeppelin-contracts@4.3.2'
+networks:
+  development:
+    verify: False
+  ganache-local:
+    verify: False
+  kovan:
+    eth_use_price_feed: "0x9326BFA02ADD2366b30bacB125260Af641031331"
+    verify: True
+  rinkeby:
+    eth_use_price_feed: "0x8A753747A1Fa494EC906cE90E9f37563A8AF630e"
+    verify: True
+  polygon-main:
+    eth_use_price_feed: "0xF9680D99D6C9589e2a93a78A04A279e509205945"
+wallets:
+  from_key: ${PRIVATE_KEY}
